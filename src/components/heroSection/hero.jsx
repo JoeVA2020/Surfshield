@@ -32,14 +32,42 @@ function HeroBG() {
 
           <p>Try our demo to see the magic</p>
         </div>
-      </div>
+        {/* start of POPUP */}
+        <div className={`popUp ${showPopup ? "show" : ""}`} ref={popupRef}>
+          <div className="report">
+            <div className="reportHeadBox">
+              <h1 className="reportHead">Vulnerability Test report</h1>
+            </div>
+            {/*scan data */}
+            <div className="scanData">
+              <div className="blocks">
+                <div className="riskRating">
+                  <h3>Risk Rating</h3>
+                </div>
+                <div className="overallRisk">
+                  <h3>Overall Risk</h3>
+                </div>
+              </div>
+                <div className="scanInfo">
+                <h3>Scan Information</h3>
+                </div>
+            </div>
+          </div>
 
-      <div className={`popUp ${showPopup ? "show" : ""}`} ref={popupRef}>
-        <p>Polaydi</p>
-        <button onClick={handleClose}>Close</button>
+          <a className="knowMore">Know more</a>
+          {/* Link to show detailed report */}
+          {/* <button className="closeButton" onClick={handleClose}>
+            Close
+          </button> */}
+          <div class="outer" onClick={handleClose}>
+            <div class="inner">
+              <label>close</label>
+            </div>
+          </div>
+        </div>
+        {/*End of POPUP */}
       </div>
     </>
-
   );
 }
 export default HeroBG;
