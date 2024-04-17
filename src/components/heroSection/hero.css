@@ -33,6 +33,7 @@
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
 }
+
 .SCANCOLO input {
   padding: 0.8rem;
   width: 20rem;
@@ -40,129 +41,112 @@
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
 }
+
 .space {
   margin-top: 1rem;
 }
+
 .space p {
   color: #dbdbdb;
   padding-top: 0.25rem;
 }
+
 .popUp {
-  height: auto;
-  padding: 2rem 3rem 2rem 3rem;
-  margin-top: 3rem;
-  margin-bottom: 8rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  height: fit-content;
   background-color: rgb(255, 255, 255);
   color: black;
   width: 100%;
   display: none;
-  transition: all 0.3s ease;
-  border-radius: 25px;
-  
+  border-radius: 1rem;
+  overflow: hidden;
 }
 
 .popUp.show {
   opacity: 1;
-  display: block;
-  transition: all 0.3s ease;
-  padding: 0, 5rem, 0, 5rem;
-  text-align: center;
-}
-.popUp.show a{
-  text-align: center;
-}
-.report {
-  padding: 2rem;
-}
-
-.reportHeadBox {
-  border-bottom: black solid 1px;
-}
-.popUp.show .scanData {
-  padding: 2rem;
-}
-
-a:hover {
-  color: aqua;
-  text-decoration: underline;
-}
-.closeButton {
-  margin-top: 2rem;
-  margin-left: 50%;
-  margin-right: 50%;
-}
-.popUp.show .blocks .overallRisk,
-.popUp.show .blocks .riskRating,
-.popUp.show .scanInfo {
-  width: 100%;
-  padding: 2rem;
-  margin: 5px;
-  border: black solid 1px;
-  border-radius: 10px;
-  text-align: left;
-}
-
-.popUp.show .blocks{
   display: flex;
-}
-/* CSS for close button */
-.outer {
-  position: relative;
-  margin: auto;
-  width: 70px;
-  margin-top: 50px;
-  cursor: pointer;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.inner {
-  width: inherit;
+.popUp.show .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid;
+  border-color: #ACACAC;
+  backdrop-filter: blur(5px);
+  z-index: 10000;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.popUp.show .title h1,
+.popUp.show .title h3 {
+  font-size: 2rem;
+  padding-left: .5rem;
+}
+
+.popUp.show a {
+  display: none;
+}
+
+.popUp.show .knowMore {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  text-decoration: none;
+  color: black;
+}
+
+.popupContainer {
+  padding: 0 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.popupContainer span {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.popupContainer .overall-Risk {
+  width: 28rem;
+  height: 280px;
+  padding: 0.5rem;
+  border-radius: 0.8rem;
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+
+
+.title .high {
+  background-color: #FF0000;
+  color: white;
+}
+
+.title .good {
+  background-color: #85D8A1;
+  color: #000;
+}
+
+.title p{
+  padding: 0.8rem 1.5rem;
+  border-radius: .8rem;
+  border: 2px solid gray;
+  font-weight: bold;
+  height: fit-content;
+  width: 10rem;
   text-align: center;
 }
-
-label { 
-  font-size: .8em; 
-  line-height: 4em;
-  text-transform: uppercase;
-  color: #000000;
-  transition: all .3s ease-in;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.inner:before, .inner:after {
-  position: absolute;
-  content: '';
-  height: 1px;
-  width: inherit;
-  background: #000000;
-  left: 0;
-  transition: all .3s ease-in;
-}
-
-.inner:before {
-  top: 50%; 
-  transform: rotate(45deg);  
-}
-
-.inner:after {  
-  bottom: 50%;
-  transform: rotate(-45deg);  
-}
-
-.outer:hover label {
-  opacity: 1;
-}
-
-.outer:hover .inner:before,
-.outer:hover .inner:after {
-  transform: rotate(0);
-}
-
-.outer:hover .inner:before {
-  top: 0;
-}
-
-.outer:hover .inner:after {
-  bottom: 0;
-}
-/* CSS for close button END */

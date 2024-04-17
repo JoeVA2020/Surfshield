@@ -10,22 +10,22 @@ export default function team() {
   const team = [
     {
       name: "ALAN",
-      position: "CTO",
+      position: "not-employed",
       img:"../../asset/alan.png"
     },
     {
       name: "ELGIN",
-      position: "COO",
+      position: "Founder",
       img:"../../asset/elgin.png"
     },
     {
       name: "JOE",
-      position: "CTO",
+      position: "we dont know",
       img:"../../asset/joe.png"
     },
     {
       name: "MELVIN",
-      position: "CEO",
+      position: "blank",
       img:"../../asset/melvin.png"
     },
   ];
@@ -51,7 +51,7 @@ export default function team() {
               <b>{team.name}</b>
               <p>{team.position}</p>
               <div className="social">
-                <a href="">
+                <a href="https://www.linkedin.com/in/alan-sabu-john/">
                   <FaLinkedin />
                 </a>
                 <a href="">

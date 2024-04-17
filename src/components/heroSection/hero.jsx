@@ -1,5 +1,9 @@
 import React, { useState, useRef } from "react";
+import { IoClose } from "react-icons/io5";
+import { IoIosLink } from "react-icons/io";
 import "./hero.css";
+import Chart from "./chart";
+import { FaFilePdf } from "react-icons/fa6";
 
 function HeroBG() {
   const [showPopup, setShowPopup] = useState(false); // State to control popup visibility
@@ -29,41 +33,36 @@ function HeroBG() {
             <input type="text" placeholder="Enter or paste link here" />
             <button onClick={handleClick}>SCAN IT</button>
           </div>
-
           <p>Try our demo to see the magic</p>
         </div>
+
         {/* start of POPUP */}
         <div className={`popUp ${showPopup ? "show" : ""}`} ref={popupRef}>
-          <div className="report">
-            <div className="reportHeadBox">
-              <h1 className="reportHead">Vulnerability Test report</h1>
-            </div>
-            {/*scan data */}
-            <div className="scanData">
-              <div className="blocks">
-                <div className="riskRating">
-                  <h3>Risk Rating</h3>
-                </div>
-                <div className="overallRisk">
-                  <h3>Overall Risk</h3>
-                </div>
-              </div>
-                <div className="scanInfo">
-                <h3>Scan Information</h3>
-                </div>
-            </div>
+          <span className="title">
+            <h1>Vulnerability Test report</h1>
+            <h3>Overall Risk:</h3>
+            {/* logic */}
+
+            {80 < 50 ? (
+              <p className="High">High</p>
+            ) : (
+              <p className="good">Low</p>
+            )}
+            {/* close button */}
+            <IoClose onClick={handleClose} size={30} /> 
+          </span>
+
+          <div className="popupContainer">
+            <span>
+              <h3>Risk Rating</h3>
+              <Chart />
+            </span>
+            
           </div>
 
-          <a className="knowMore">Know more</a>
-          {/* Link to show detailed report */}
-          {/* <button className="closeButton" onClick={handleClose}>
-            Close
-          </button> */}
-          <div class="outer" onClick={handleClose}>
-            <div class="inner">
-              <label>close</label>
-            </div>
-          </div>
+          <a className="knowMore" href="/">
+            Genrate Report <IoIosLink />
+          </a>
         </div>
         {/*End of POPUP */}
       </div>
