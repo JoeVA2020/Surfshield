@@ -88,6 +88,7 @@
   height: auto;
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 .low, .medium, .high{
   font-size: large;
